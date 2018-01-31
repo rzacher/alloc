@@ -97,6 +97,11 @@ public class FidelityAsset {
 		return unknown; 
      }
 	
+	public Integer getBonds() {
+		return bonds + shortTerm + 
+			    convertibles + preferred;	
+	}
+	
 	private Integer stripDollarSign(String entry) {
 		Integer values[] = new Integer[2]; 
 		String cleanedEntry = entry.replaceAll(",", "").replaceAll("\"", "");

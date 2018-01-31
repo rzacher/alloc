@@ -15,6 +15,8 @@ public class Allocator {
 	int emTotal = 0; 
 	int developedIntlTotal = 0; 
 	int israelTotal = 0; 
+	int bondsTotal = 0;
+	int foreignTotal = 0; 
 	int total = 0; 
 	
 	
@@ -131,17 +133,24 @@ public class Allocator {
 			
 			// Calc domestic total for Fidelity Assets
 			domesticTotal += asset.getDomesticStock(); 
+			foreignTotal += asset.getForeignStock();
+			bondsTotal += asset.getBonds(); 
 			total += asset.getSum(); 
 		}
 		
 		System.out.println("Domestic total: " + domesticTotal);
+		System.out.println("Foreign total: " + foreignTotal);
+		System.out.println("Bonds total: " + bondsTotal);
 		System.out.println("EM total: " + emTotal); 
 		System.out.println("Israel total: " + israelTotal); 
 		System.out.println("Total: " + total); 
 		System.out.println(); 
 		System.out.println("Domestic allocation: " + (double) domesticTotal/total);
+		System.out.println("Bond allocation: " + (double) bondsTotal/total);
+		System.out.println("Foreign allocation: "  + (double) foreignTotal/total); 
 		System.out.println("EM allocation: " + (double) emTotal/total); 
 		System.out.println("Israel allocation: " + (double) israelTotal/total); 
+		
 		
 		
 	}
